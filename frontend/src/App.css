@@ -1,0 +1,391 @@
+/* ---------- Rail (search controls) ---------- */
+
+.rail {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rail__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
+.rail__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 0 4px rgba(53, 214, 140, 0.15);
+}
+
+.rail__tagline {
+  margin: -12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 30ch;
+}
+
+.rail__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.field__label {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.field input,
+.field select {
+  background: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 11px;
+  font-size: 14px;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--signal);
+}
+
+.rail__submit {
+  margin-top: 6px;
+  background: var(--signal);
+  color: #0a1410;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: opacity 0.15s ease;
+}
+
+.rail__submit:hover {
+  opacity: 0.9;
+}
+
+.rail__submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.rail__footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ---------- Main / tabs ---------- */
+
+.main {
+  padding: 28px 36px 60px;
+  max-width: 900px;
+}
+
+.tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.tabs__item {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 2px 14px;
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tabs__item--active {
+  color: var(--text);
+  border-bottom-color: var(--signal);
+}
+
+.tabs__count {
+  background: var(--surface-raised);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 20px;
+}
+
+/* ---------- Stats row ---------- */
+
+.stats-row {
+  display: flex;
+  gap: 32px;
+  padding-bottom: 20px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat__value {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.stat__label {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.stat--live {
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  align-self: center;
+}
+
+.stat__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--signal);
+}
+
+/* ---------- Job list / rows ---------- */
+
+.job-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.job-row {
+  display: flex;
+  gap: 14px;
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.job-row__dot {
+  margin-top: 7px;
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.job-row__dot--fresh {
+  background: var(--signal);
+  box-shadow: 0 0 0 3px rgba(53, 214, 140, 0.15);
+}
+
+.job-row__dot--applied {
+  background: var(--signal);
+}
+.job-row__dot--interviewing {
+  background: var(--amber);
+  box-shadow: 0 0 0 3px rgba(232, 169, 60, 0.15);
+}
+.job-row__dot--offer {
+  background: var(--signal);
+  box-shadow: 0 0 0 3px rgba(53, 214, 140, 0.2);
+}
+.job-row__dot--rejected {
+  background: var(--rose);
+}
+
+.job-row--rejected {
+  opacity: 0.55;
+}
+
+.job-row__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.job-row__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.job-row__heading h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  font-weight: 600;
+}
+
+.job-row__time {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.job-row__meta {
+  display: flex;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.job-row__sep {
+  color: var(--border);
+}
+
+.job-row__salary {
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+
+.job-row__desc {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: 62ch;
+}
+
+.job-row__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 92px;
+}
+
+.job-row__actions--tracker {
+  min-width: 150px;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn--primary {
+  background: var(--signal);
+  color: #0a1410;
+}
+
+.btn--primary:hover {
+  opacity: 0.9;
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn--ghost:hover {
+  border-color: var(--muted);
+}
+
+.btn--ghost:disabled {
+  color: var(--muted);
+  cursor: default;
+}
+
+.status-select {
+  background: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 9px;
+  font-size: 12.5px;
+}
+
+/* ---------- Empty / loading / error states ---------- */
+
+.state-block {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 40px 28px;
+  text-align: left;
+  margin-top: 12px;
+}
+
+.state-block h3 {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: 16px;
+}
+
+.state-block p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+.state-block--error {
+  border-color: rgba(217, 100, 124, 0.4);
+}
+
+.state-block--error h3 {
+  color: var(--rose);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .rail {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .main {
+    padding: 24px 20px 60px;
+  }
+
+  .job-row {
+    flex-wrap: wrap;
+  }
+
+  .job-row__actions {
+    flex-direction: row;
+    min-width: 0;
+    margin-left: 21px;
+  }
+}
