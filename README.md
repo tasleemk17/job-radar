@@ -1,4 +1,4 @@
-# Job Radar
+# Job Radar #
 
 A MERN app (React + Node/Express + MongoDB) that scans real, live job vacancies near a
 location and role you choose, and tracks the ones you apply to.
